@@ -1,6 +1,6 @@
 # FCCee-Polarization
 
-This repository contains Python scripts for the polarization analysis of $W^+W^-$ signals ($00$, $TT$, and mixed states) developed within the FCC-ee framework.
+This repository contains Python scripts for the polarization analysis of $W^+W^-$ signals ($00$, $TT$, and mixed states).
 
 ## Logical steps:
 1. **Preliminary Angular Studies (`study_angles.py`)**: 

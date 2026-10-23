@@ -18,4 +18,4 @@ This repository contains Python scripts for the polarization analysis of $W^+W^-
 ## Prerequisites
 Ensure you have ROOT (with PyROOT) installed, then install the required Python packages:
 ```bash
-pip install -r requirements.txt --break-system-packages
+pip install -r requirements.txt 

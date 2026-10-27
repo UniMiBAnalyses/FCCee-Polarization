@@ -1,10 +1,10 @@
 # FCCee-Polarization
 
-This repository contains Python scripts for the polarization analysis of the \\(W^+W^-\\) signal in the FCC-ee framework. It includes angular and kinematic studies, signal and background template extraction, binned likelihood fits, and a binary Boosted Decision Tree (BDT) analysis.
+This repository contains Python scripts for the polarization analysis of the $W^+W^-$ signal in the FCC-ee framework. It includes angular and kinematic studies, signal and background template extraction, binned likelihood fits, and a binary Boosted Decision Tree (BDT) analysis.
 
 ## Logical steps
 
-1. **Angular and kinematic studies (`study_angles.py`)**: studies the production angle \\(\\cos\\theta_W\\), decay-angle distributions, leading-lepton transverse momentum, and dilepton invariant mass. It also compares the signal polarization components with the background.
+1. **Angular and kinematic studies (`study_angles.py`)**: studies the production angle $\cos\theta_W$, decay-angle distributions, leading-lepton transverse momentum, and dilepton invariant mass. It also compares the signal polarization components with the background.
 2. **Template extraction (`extract_histograms.py`)**: builds the signal and background templates, normalizes them to the configured integrated luminosity, and saves them in a ROOT file.
 3. **Statistical likelihood fit (`likelihood_fit.py`)**: performs binned Poisson likelihood fits with `iminuit` to estimate the signal-strength parameters and their uncertainties and correlations.
 4. **BDT analysis (`bdt_analysis.py`)**: trains a binary signal/background classifier with TMVA, builds BDT-score templates from a holdout sample, and performs a likelihood fit.
@@ -32,21 +32,3 @@ The analysis requires ROOT with PyROOT. The BDT workflow additionally requires T
 
 ```bash
 python -m pip install -r requirements.txt
-```
-
-## Running the analysis
-
-After configuring the sample paths and setting up ROOT, run the required steps:
-
-```bash
-python study_angles.py
-python extract_histograms.py
-python likelihood_fit.py
-python bdt_analysis.py
-```
-
-`study_angles.py` runs the full angular and kinematic study and also writes the templates used by the conventional fit. `extract_histograms.py` can be run independently when only the templates are needed. Run `likelihood_fit.py` after creating the templates. The BDT workflow is independent and creates its own intermediate files and trained weights.
-
-## Normalization and statistical model
-
-The angular and kinematic study uses the integrated luminosity and cross-sections configured in `analysis_config.py`. The likelihood fits use an Asimov dataset formed from the nominal signal and background templates, so they estimate expected statistical sensitivity rather than fitting observed collision data.

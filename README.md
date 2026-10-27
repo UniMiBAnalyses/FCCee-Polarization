@@ -32,7 +32,7 @@ The analysis requires ROOT with PyROOT. The BDT workflow additionally requires T
 
 ```bash
 python -m pip install -r requirements.txt
-
+```
 ## Running the analysis
 
 After configuring the sample paths and setting up ROOT, run the required steps:

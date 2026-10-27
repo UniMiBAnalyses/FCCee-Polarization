@@ -32,3 +32,20 @@ The analysis requires ROOT with PyROOT. The BDT workflow additionally requires T
 
 ```bash
 python -m pip install -r requirements.txt
+
+## Running the analysis
+
+After configuring the sample paths and setting up ROOT, run the required steps:
+
+```bash
+python study_angles.py
+python extract_histograms.py
+python likelihood_fit.py
+python bdt_analysis.py
+```
+
+`study_angles.py` runs the full angular and kinematic study and also writes the templates used by the conventional fit. `extract_histograms.py` can be run independently when only the templates are needed. Run `likelihood_fit.py` after creating the templates. The BDT workflow is independent and creates its own intermediate files and trained weights.
+
+## Normalization and statistical model
+
+The angular and kinematic study uses the integrated luminosity and cross-sections configured in `analysis_config.py`. The likelihood fits use an Asimov dataset formed from the nominal signal and background templates, so they estimate expected statistical sensitivity rather than fitting observed collision data.
